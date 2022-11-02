@@ -4,11 +4,11 @@ const themes = {
 	light: {
 		id: 1,
 		foreground: '#000000',
-		background: '#eeeeee',
+		background: '#f70',
 	},
 	dark: {
 		id: 2,
-		foreground: '#ffffff',
+		foreground: '#f70',
 		background: '#222222',
 	},
 };
@@ -32,7 +32,7 @@ export default function Index() {
 		</ThemeContext.Provider>
 	);
 }
-function ThemedButton() {
+export function ThemedButton() {
 	const { theme, changeTheme } = useContext(ThemeContext);
 	return (
 		<button
