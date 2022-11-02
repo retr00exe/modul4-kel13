@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import logo from '../logo.svg';
 import './Counter.css';
+import ThemedButton from '../learn-useContext';
 
 export default function Counter() {
+	const [text, setText] = useState('');
 	const [showImage, setShowImage] = useState(true);
 	const [count, setCount] = useState(0);
 	const countUp = () => {
@@ -31,6 +33,11 @@ export default function Counter() {
 					{showImage !== true ? 'show' : 'hide'}
 				</button>
 			</div>
+
+			<ThemedButton />
+
+			<input type="text" placeholder="" onChange={(e) => setText(e.target.value)} />
+			<h1 style={{ fontSize: '5rem' }}>{text}</h1>
 			<p className="Text">{count}</p>
 			<div className="ViewButton">
 				<div className="ViewButton2">
