@@ -37,7 +37,7 @@ function App() {
 					<Route path="/effect" exact element={<Effect />} />
 					<Route path="/context" exact element={<Context />} />
 					<Route path="/memo" exact element={<Memo />} />
-					<Route path="/tugas" exact element={<Tugas />} />
+					<Route path="/tugas" exact element={<Memo />} />
 				</Routes>
 			</div>
 		</Router>
