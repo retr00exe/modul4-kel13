@@ -6,6 +6,7 @@ import './App.css';
 import Counter from './learn-useState/Counter';
 import Effect from './learn-useEffect';
 import Context from './learn-useContext';
+import Memo from './learn-useMemo';
 
 function App() {
 	return (
@@ -22,16 +23,19 @@ function App() {
 						<li className="li">
 							<Link to="/context">Use Context</Link>
 						</li>
+						<li className="li">
+							<Link to="/memo">Use Memo</Link>
+						</li>
 					</ul>
 				</nav>
 				<Routes>
 					<Route path="/" exact element={<Counter />} />
 					<Route path="/effect" exact element={<Effect />} />
 					<Route path="/context" exact element={<Context />} />
+					<Route path="/memo" exact element={<Memo />} />
 				</Routes>
 			</div>
 		</Router>
 	);
 }
 export default App;
-
