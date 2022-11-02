@@ -5,7 +5,7 @@ export default function Index() {
 	const [data, setData] = useState([]);
 	//dijalankan 1 kali
 	useEffect(() => {
-		fetch('https://jsonplaceholder.typicode.com/todos')
+		fetch('https://api.quotable.io/quotes?page=1')
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
@@ -15,6 +15,8 @@ export default function Index() {
 				console.log(error);
 			});
 	}, []);
+
+	console.log(data);
 	//dijalankan terus setiap ada perubahan count
 	useEffect(() => {
 		if (count > 0) {
@@ -36,9 +38,15 @@ export default function Index() {
 			<p className="Text"> Learn useEffect</p>
 			<p>KELOMPOK13</p>
 			<ul>
-				{data.slice(0, 10).map((value) => (
-					<li key={value.id}>{value.title}</li>
-				))}
+				{data &&
+					data.results?.map((value) => (
+						<li key={value.id}>
+							<h4>{value.author}</h4>
+							<div>
+								- <span>{value.content}</span>
+							</div>
+						</li>
+					))}
 			</ul>
 			<p className="Text">{count}</p>
 			<div className="ViewButton">
