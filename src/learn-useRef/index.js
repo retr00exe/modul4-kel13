@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
-
-function App() {
+import './index.css';
+function Tugas() {
   const [inputValue, setInputValue] = useState("");
   const count = useRef(0);
 
@@ -24,4 +24,6 @@ function App() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(<Tugas />);
+
+export default Tugas;
